@@ -1,0 +1,21 @@
+/* ===== Main Layout Styles ===== */
+
+main {
+    grid-area: main;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* ===== Main Responsive ===== */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    main {
+        margin-left: 250px;
+    }
+}
