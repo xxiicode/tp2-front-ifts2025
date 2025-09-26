@@ -1,8 +1,26 @@
+// src/pages/Home.jsx
+import { Link } from "react-router-dom";
+import heroImg from "../assets/imgs/hero-section.webp";
+import logoHTML from "../assets/imgs/logo-html.webp";
+import logoCSS from "../assets/imgs/logo-css.webp";
+import logoJS from "../assets/imgs/logo-javascript.webp";
+import logoVS from "../assets/imgs/logo-visual.webp";
+import logoGitHub from "../assets/imgs/logo-github.webp";
+import imgPaula from "../assets/imgs/card-Paula.webp";
+import imgMartin from "../assets/imgs/card-Martin.webp";
+import imgMicaela from "../assets/imgs/card-Micaela.webp";
+import imgLeandro from "../assets/imgs/card-Leandro.webp";
+import imgMaria from "../assets/imgs/card-Maria.webp";
+
 const Home = () => {
   return (
     <>
       {/* Hero */}
-      <section className="hero" aria-label="Portada Hola Mundo">
+      <section
+        className="hero"
+        aria-label="Portada Hola Mundo"
+        style={{ backgroundImage: `url(${heroImg})` }}
+      >
         <div className="hero__content">
           <h1>HELLO WORLD</h1>
         </div>
@@ -13,31 +31,19 @@ const Home = () => {
         <h2 className="titulo-principal">Tecnologías</h2>
         <ul className="tech-list" role="list">
           <li className="tech-item">
-            <img src="src/assets/imgs/logo-html.webp" alt="HTML" title="HTML" />
+            <img src={logoHTML} alt="HTML" title="HTML" />
           </li>
           <li className="tech-item">
-            <img src="src/assets/imgs/logo-css.webp" alt="CSS" title="CSS" />
+            <img src={logoCSS} alt="CSS" title="CSS" />
           </li>
           <li className="tech-item">
-            <img
-              src="src/assets/imgs/logo-javascript.webp"
-              alt="JavaScript"
-              title="JavaScript"
-            />
+            <img src={logoJS} alt="JavaScript" title="JavaScript" />
           </li>
           <li className="tech-item">
-            <img
-              src="src/assets/imgs/logo-visual.webp"
-              alt="Visual Studio Code"
-              title="Visual Studio Code"
-            />
+            <img src={logoVS} alt="Visual Studio Code" title="Visual Studio Code" />
           </li>
           <li className="tech-item">
-            <img
-              src="src/assets/imgs/logo-github.webp"
-              alt="GitHub"
-              title="GitHub"
-            />
+            <img src={logoGitHub} alt="GitHub" title="GitHub" />
           </li>
         </ul>
       </section>
@@ -48,7 +54,7 @@ const Home = () => {
           <h3>¡Bienvenido a TechVerse!</h3>
           <p>
             Un multiverso digital donde cada integrante tiene su estilo. <br />
-            ¡Eligí uno y sumergite en la experiencia de cada portal!
+            ¡Elegí uno y sumergite en la experiencia de cada portal!
           </p>
         </div>
       </section>
@@ -57,26 +63,26 @@ const Home = () => {
       <section id="miembros" className="section-cards">
         <h2 className="titulo-principal">Portales de integrantes</h2>
         <div className="cards-grid">
-          <a className="card card-member" href="../paula.html">
-            <img src="src/assets/imgs/card-Paula.webp" alt="Portal Paula" />
+          <Link className="card card-member" to="/paula">
+            <img src={imgPaula} alt="Portal Paula" />
             <span data-original="Paula">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../martin.html">
-            <img src="src/assets/imgs/card-Martin.webp" alt="Portal Martin" />
+          </Link>
+          <Link className="card card-member" to="/martin">
+            <img src={imgMartin} alt="Portal Martin" />
             <span data-original="Martin">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../micaela.html">
-            <img src="src/assets/imgs/card-Micaela.webp" alt="Portal Micaela" />
+          </Link>
+          <Link className="card card-member" to="/micaela">
+            <img src={imgMicaela} alt="Portal Micaela" />
             <span data-original="Micaela">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../leandro.html">
-            <img src="src/assets/imgs/card-Leandro.webp" alt="Portal Leandro" />
+          </Link>
+          <Link className="card card-member" to="/leandro">
+            <img src={imgLeandro} alt="Portal Leandro" />
             <span data-original="Leandro">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../maria.html">
-            <img src="src/assets/imgs/card-Maria.webp" alt="Portal Maria" />
+          </Link>
+          <Link className="card card-member" to="/maria">
+            <img src={imgMaria} alt="Portal Maria" />
             <span data-original="Maria">SELECT PLAYER</span>
-          </a>
+          </Link>
         </div>
       </section>
 

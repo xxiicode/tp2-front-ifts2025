@@ -12,7 +12,7 @@ const Aside = () => {
             />
           </a>
         </div>
-        <nav class="main-nav" aria-label="Navegación principal">
+        <nav className="main-nav" aria-label="Navegación principal">
           <ul>
             <li>
               <Link to="/">Inicio</Link>
