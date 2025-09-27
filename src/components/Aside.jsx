@@ -5,14 +5,14 @@ const Aside = () => {
     <>
       <aside className="aside">
         <div className="aside-logo">
-          <a href="#inicio" class="logo">
+          <a href="#inicio" className="logo">
             <img
               src="./src/assets/imgs/logo-inicio.webp"
               alt="TechVerse logo"
             />
           </a>
         </div>
-        <nav class="main-nav" aria-label="Navegación principal">
+        <nav className="main-nav" aria-label="Navegación principal">
           <ul>
             <li>
               <Link to="/">Inicio</Link>

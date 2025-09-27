@@ -1,3 +1,5 @@
+import CoinBoton from "./Button";
+
 const TeamCard = ({
   nombre,
   ubicacion,
@@ -6,6 +8,7 @@ const TeamCard = ({
   peliculas,
   musica,
   imagen,
+  initialCoins,
 }) => {
   return (
     <article className="team-card">
@@ -27,6 +30,7 @@ const TeamCard = ({
         <p>
           <span className="lbl">Edad</span> <span className="val">{edad}</span>
         </p>
+        <CoinBoton initialCoins={initialCoins} />
       </div>
     </article>
   );
