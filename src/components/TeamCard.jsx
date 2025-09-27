@@ -30,7 +30,7 @@ const TeamCard = ({
         <p>
           <span className="lbl">Edad</span> <span className="val">{edad}</span>
         </p>
-        <CoinBoton initialCoins={initialCoins} />
+        <CoinBoton player={nombre} initialCoins={initialCoins} />
       </div>
     </article>
   );

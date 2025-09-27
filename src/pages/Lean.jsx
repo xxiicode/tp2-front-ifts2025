@@ -1,3 +1,4 @@
+import CoinBoton from "../components/Button";
 import TeamCard from "../components/TeamCard";
 
 const LeanPage = () => {
@@ -7,7 +8,7 @@ const LeanPage = () => {
         nombre="Lean"
         ubicacion="Camarones"
         edad={38}
-        initialCoins={30}
+        initialCoins={22}
       />
     </>
   );
