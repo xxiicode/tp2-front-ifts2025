@@ -1,5 +1,4 @@
-import CoinBoton from "../components/Button";
-import TeamCard from "../components/TeamCard";
+import TeamCard from '../components/TeamCard'
 
 const LeanPage = () => {
   return (
@@ -11,7 +10,7 @@ const LeanPage = () => {
         initialCoins={22}
       />
     </>
-  );
-};
+  )
+}
 
-export default LeanPage;
+export default LeanPage

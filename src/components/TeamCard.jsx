@@ -1,12 +1,12 @@
-import CoinBoton from "./Button";
+import CoinBoton from './Button'
 
 const TeamCard = ({
   nombre,
   ubicacion,
   edad,
-  habilidades,
-  peliculas,
-  musica,
+  //habilidades,
+  //peliculas,
+  //musica,
   imagen,
   initialCoins,
 }) => {
@@ -14,7 +14,7 @@ const TeamCard = ({
     <article className="team-card">
       <div className="team-card-avatar">
         <img
-          src={imagen || "img-placeholder.png"}
+          src={imagen || 'img-placeholder.png'}
           alt={`Avatar de ${nombre}`}
         />
       </div>
@@ -24,7 +24,7 @@ const TeamCard = ({
           <span className="val">{nombre}</span>
         </p>
         <p>
-          <span className="lbl">Ubicación</span>{" "}
+          <span className="lbl">Ubicación</span>{' '}
           <span className="val">{ubicacion}</span>
         </p>
         <p>
@@ -33,7 +33,7 @@ const TeamCard = ({
         <CoinBoton player={nombre} initialCoins={initialCoins} />
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default TeamCard;
+export default TeamCard

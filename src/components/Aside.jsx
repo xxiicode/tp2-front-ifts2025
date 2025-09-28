@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Aside = () => {
   return (
@@ -40,7 +40,7 @@ const Aside = () => {
         </footer>
       </aside>
     </>
-  );
-};
+  )
+}
 
-export default Aside;
+export default Aside

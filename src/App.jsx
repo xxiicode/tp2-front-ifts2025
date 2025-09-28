@@ -1,11 +1,11 @@
 //import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Aside from "./components/Aside.jsx";
-import Home from "./pages/Home.jsx";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Aside from './components/Aside.jsx'
+import Home from './pages/Home.jsx'
 
-import LeanPage from "./pages/Lean.jsx";
+import LeanPage from './pages/Lean.jsx'
 
-function App() {
+function App () {
   return (
     <>
       <div className="container">
@@ -21,7 +21,7 @@ function App() {
         </BrowserRouter>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
