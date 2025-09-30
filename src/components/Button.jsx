@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { playSound } from '../utils/sound'
 
 const CoinBoton = ({ player, initialCoins }) => {
   const [coins, setCoins] = useState(() => {
@@ -11,7 +12,13 @@ const CoinBoton = ({ player, initialCoins }) => {
   }, [coins, player])
 
   return (
-    <button onClick={() => setCoins(coins + 1)} className="coin-btn">
+    <button
+      onClick={() => {
+        setCoins(coins + 1)
+        playSound('src/assets/sounds/coin.mp3')
+      }}
+      className="coin-btn"
+    >
       {coins}
     </button>
   )

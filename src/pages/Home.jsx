@@ -61,7 +61,7 @@ const Home = () => {
             <img src="src/assets/imgs/card-Paula.webp" alt="Portal Paula" />
             <span data-original="Paula">SELECT PLAYER</span>
           </a>
-          <a className="card card-member" href="../martin.html">
+          <a className="card card-member" href="/martin">
             <img src="src/assets/imgs/card-Martin.webp" alt="Portal Martin" />
             <span data-original="Martin">SELECT PLAYER</span>
           </a>

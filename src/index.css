@@ -1,5 +1,5 @@
 /* ===== Fuentes y variables globales ===== */
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&family=Press+Start+2P&display=swap");
 
 /* ===== Imports de módulos CSS ===== */
 @import "./css/aside.css";
@@ -8,16 +8,22 @@
 @import "./css/team-cards.css";
 
 :root {
+  /* Fuentes */
   --font-main: "Rajdhani", sans-serif;
-  --font-title: "Orbitron", sans-serif;
-  --color-text: #e5e7eb;
-  --color-bg: #0d0d0d;
-  --color-primary: #646cff;
-  --color-primary-hover: #535bf2;
-  --color-principal: #0d0d0d;
-  --color-secundario: #111827;
-  --color-acento: #ff6f00;
-  --color-borde: #222;
+  --font-title: "Press Start 2P", cursive;
+  --font-mario-ui: "Press Start 2P", cursive;
+
+  /* Paleta Mario */
+  --color-text: #ffffff;
+  --color-bg: #5c94fc;              /* Cielo */
+  --color-primary: #e52521;          /* Rojo Mario */
+  --color-primary-hover: #b81c19;
+  --color-principal: #5c94fc;        /* Base cielo */
+  --color-secundario: #1e2a5a;       /* Azul oscuro */
+  --color-acento: #fbd000;           /* Amarillo moneda */
+  --color-borde: #2a2a2a;
+  --color-brick: #b55239;            /* Ladrillo */
+  --color-pipe: #2ecc71;             /* Tubo */
 }
 
 /* ===== Reset básico ===== */
@@ -73,6 +79,28 @@ button:focus-visible {
   outline: 3px solid var(--color-primary);
 }
 
+/* Botón moneda estilo Mario (para .coin-btn) */
+.coin-btn {
+  font-family: var(--font-mario-ui);
+  background: linear-gradient(180deg, #fbd000 0%, #e0b200 100%);
+  color: #5a3600;
+  border: 4px solid #9c6a00;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 6px 0 #7a5200, 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.coin-btn:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 #7a5200, 0 8px 14px rgba(0,0,0,0.35);
+}
+
+.coin-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #7a5200, 0 6px 10px rgba(0,0,0,0.35);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -102,6 +130,42 @@ p {
   grid-template-columns: 300px 1fr;
   grid-template-areas: "aside main";
   min-height: 100vh;
+}
+
+/* ===== Estilos Mario específicos ===== */
+.mario-button {
+  font-family: var(--font-mario-ui);
+  background: linear-gradient(180deg, #fbd000 0%, #e0b200 100%);
+  color: #5a3600;
+  border: 4px solid #9c6a00;
+  border-radius: 6px;
+  box-shadow: 0 6px 0 #7a5200, 0 6px 12px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mario-button:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 #7a5200, 0 8px 14px rgba(0,0,0,0.35);
+}
+
+.mario-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #7a5200, 0 6px 10px rgba(0,0,0,0.35);
+}
+
+/* Tubo decorativo */
+.mario-pipe {
+  background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
+  border: 4px solid #145a32;
+  border-radius: 8px;
+}
+
+/* Ladrillo / bloque */
+.mario-brick {
+  background: linear-gradient(180deg, #b55239 0%, #8d3f2d 100%);
+  border: 4px solid #5a261a;
+  box-shadow: inset 0 6px 0 rgba(255,255,255,0.15);
 }
 
 

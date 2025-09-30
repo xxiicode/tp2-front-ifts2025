@@ -4,9 +4,9 @@ const TeamCard = ({
   nombre,
   ubicacion,
   edad,
-  //habilidades,
-  //peliculas,
-  //musica,
+  habilidades,
+  peliculas,
+  musica,
   imagen,
   initialCoins,
 }) => {
@@ -28,7 +28,19 @@ const TeamCard = ({
           <span className="val">{ubicacion}</span>
         </p>
         <p>
-          <span className="lbl">Edad</span> <span className="val">{edad}</span>
+          <span className="lbl">Edad</span>
+          <span className="val">{edad}</span>
+        </p>
+        <p>
+          <span className="lbl">Habilidades</span>
+          <span className="val">{habilidades}</span>
+        </p>
+        <p>
+          <span className="lbl">Películas</span>
+          <span className="val">{peliculas}</span>
+        </p>
+        <p>
+          <span className="lbl">Música</span> <span className="val">{musica}</span>
         </p>
         <CoinBoton player={nombre} initialCoins={initialCoins} />
       </div>

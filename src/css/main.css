@@ -19,3 +19,9 @@ main {
         margin-left: 250px;
     }
 }
+
+@media (min-width: 1201px) {
+    main {
+        margin-left: 300px;
+    }
+}
