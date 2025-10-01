@@ -1,10 +1,11 @@
+import { SoundBtn } from '../components/SoundBtn'
 const Home = () => {
   return (
     <>
       {/* Hero */}
       <section className="hero" aria-label="Portada Hola Mundo">
         <div className="hero__content">
-          <h1>HELLO WORLD</h1>
+          <h1 className="mario">HELLO WORLD</h1>
         </div>
       </section>
 
@@ -56,6 +57,7 @@ const Home = () => {
       {/* Cards de Miembros / Portales */}
       <section id="miembros" className="section-cards">
         <h2 className="titulo-principal">Portales de integrantes</h2>
+        <SoundBtn />
         <div className="cards-grid">
           <a className="card card-member" href="../paula.html">
             <img src="src/assets/imgs/card-Paula.webp" alt="Portal Paula" />
@@ -66,7 +68,7 @@ const Home = () => {
             <span data-original="Martin">SELECT PLAYER</span>
           </a>
           <a className="card card-member" href="../micaela.html">
-            <img src="src/assets/imgs/card-Micaela.webp" alt="Portal Micaela" />
+            <img src="src/assets/imgs/sm-lean.jpeg" alt="Portal Micaela" />
             <span data-original="Micaela">SELECT PLAYER</span>
           </a>
           <a className="card card-member" href="../leandro.html">

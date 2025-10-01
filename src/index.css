@@ -1,23 +1,37 @@
 /* ===== Fuentes y variables globales ===== */
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 /* ===== Imports de módulos CSS ===== */
 @import "./css/aside.css";
 @import "./css/main.css";
 @import "./css/home.css";
 @import "./css/team-cards.css";
 
+@font-face {
+  font-family: 'Super Mario';
+  src: url('./assets/fonts/nwmfont.woff2') format('woff2');
+       font-weight: normal;
+       font-style: normal;
+}
+
 :root {
+  --font-mario: "Super Mario", sans-serif;
   --font-main: "Rajdhani", sans-serif;
+  --font-2p: "Press Start 2P", sans-serif;
   --font-title: "Orbitron", sans-serif;
+  
+  --color-blue: #08B3DE;
+  --color-blue-soft: #94DEE7;
+  --color-blue-dark: #006AA1;
+  --color-acento: #FD4D36;
   --color-text: #e5e7eb;
   --color-bg: #0d0d0d;
-  --color-primary: #646cff;
-  --color-primary-hover: #535bf2;
-  --color-principal: #0d0d0d;
-  --color-secundario: #111827;
-  --color-acento: #ff6f00;
-  --color-borde: #222;
+  --color-green: #00AE00;
+  --color-green-dark: #016E01;
+  --color-bg-box: #f5c97a;
+  --color-bg-box-light: #f9e2b3;
+  --color-border: #5c3c0d;
+  --color-shadow: #2d1a07;
 }
 
 /* ===== Reset básico ===== */
@@ -90,6 +104,16 @@ h6,
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #ffffff;
+}
+
+h1.mario,
+h2.mario,
+h3.mario,
+h4.mario,
+h5.mario,
+h6.mario,
+p.mario {
+  font-family: var(--font-mario);
 }
 
 p {

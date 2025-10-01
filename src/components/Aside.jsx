@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { SoundWrapper } from './SoundWrapper'
+import coinSfx from '../assets/sounds/smb_coin.wav'
 
 const Aside = () => {
   return (
@@ -15,10 +17,14 @@ const Aside = () => {
         <nav className="main-nav" aria-label="Navegación principal">
           <ul>
             <li>
-              <Link to="/">Inicio</Link>
+              <SoundWrapper sound={coinSfx}>
+                <Link to="/"><span>Inicio</span></Link>
+              </SoundWrapper>
             </li>
             <li>
-              <Link to="/proyecto">Nuestro proyecto</Link>
+              <SoundWrapper sound={coinSfx}>
+                <Link to="/proyecto">Nuestro proyecto</Link>
+              </SoundWrapper>
             </li>
             <li>
               <Link to="/lean">Lean</Link>
@@ -27,7 +33,7 @@ const Aside = () => {
               <Link to="/miembros">Miembros</Link>
             </li>
             <li>
-              <Link to="/bitacora.html">Bitacora</Link>
+              <Link to="/bitacora">Bitacora</Link>
             </li>
           </ul>
         </nav>

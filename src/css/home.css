@@ -16,8 +16,9 @@ section h2 {
     min-height: 360px;
     border-radius: 14px;
     overflow: hidden;
-    background: #000 url("../img/hero-section.webp") center/cover no-repeat;
+    background: #000 url("../assets/imgs/smbg.jpg") center/cover no-repeat;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
 }
 
 .hero::after {
