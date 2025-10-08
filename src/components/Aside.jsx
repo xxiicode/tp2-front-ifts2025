@@ -30,10 +30,13 @@ const Aside = () => {
               <Link to="/lean">Lean</Link>
             </li>
             <li>
-              <Link to="/miembros">Miembros</Link>
+              <Link to="/martin">Martin</Link>
             </li>
             <li>
               <Link to="/bitacora">Bitacora</Link>
+            </li>
+            <li>
+              <Link to="/playmario">Jugar al Mario</Link>
             </li>
           </ul>
         </nav>
