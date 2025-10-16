@@ -1,4 +1,28 @@
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { SoundBtn } from '../components/SoundBtn'
+
+function CardMember ({ to, nombre, img, imgHover }) {
+  const [hover, setHover] = useState(false)
+
+  return (
+    <Link
+      className="card card-member"
+      to={to}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <img
+        src={hover ? imgHover : img}
+        alt={`Portal ${nombre}`}
+      />
+      <span data-original={nombre}>
+        {hover ? 'PLAYER READY' : 'SELECT PLAYER'}
+      </span>
+    </Link>
+  )
+}
+
 const Home = () => {
   return (
     <>
@@ -58,27 +82,19 @@ const Home = () => {
       <section id="miembros" className="section-cards">
         <h2 className="titulo-principal">Portales de integrantes</h2>
         <SoundBtn />
-        <div className="cards-grid">
-          <a className="card card-member" href="../paula.html">
-            <img src="src/assets/imgs/card-Paula.webp" alt="Portal Paula" />
-            <span data-original="Paula">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../martin.html">
-            <img src="src/assets/imgs/card-Martin.webp" alt="Portal Martin" />
-            <span data-original="Martin">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../micaela.html">
-            <img src="src/assets/imgs/sm-lean.jpeg" alt="Portal Micaela" />
-            <span data-original="Micaela">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../leandro.html">
-            <img src="src/assets/imgs/card-Leandro.webp" alt="Portal Leandro" />
-            <span data-original="Leandro">SELECT PLAYER</span>
-          </a>
-          <a className="card card-member" href="../maria.html">
-            <img src="src/assets/imgs/card-Maria.webp" alt="Portal Maria" />
-            <span data-original="Maria">SELECT PLAYER</span>
-          </a>
+        <div className="cards">
+          <CardMember
+            to="/martin"
+            nombre="Martin"
+            img="./src/assets/imgs/sm-lean.jpeg"
+            imgHover="./src/assets/imgs/card-Martin.webp"
+          />
+          <CardMember
+            to="/lean"
+            nombre="Leandro"
+            img='./src/assets/imgs/sm-lean.jpeg'
+            imgHover="./src/assets/imgs/card-Leandro.webp"
+          />
         </div>
       </section>
 

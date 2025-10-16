@@ -10,25 +10,25 @@ const bitacoraEntries = [
 
 const timelineEntries = [
   {
-    id: 1,
+    id: 4,
     date: '01/09/25',
     title: '🚀 Inicio del Proyecto',
     content: 'Lanzamiento del TP1 y formación del equipo Grupo 11.',
   },
   {
-    id: 2,
+    id: 3,
     date: '05/09/25',
     title: '🎨 Concepto Creativo',
     content: 'Definición del concepto "multiverso digital retro-futurista".',
   },
   {
-    id: 3,
+    id: 2,
     date: '12/09/25',
     title: '⚡ Desarrollo Activo',
     content: 'Implementación de estilos individuales y funcionalidades JS.',
   },
   {
-    id: 4,
+    id: 1,
     date: '22/09/25',
     title: '✅ Entrega Final',
     content: 'Deploy en Vercel y entrega del proyecto completado.',

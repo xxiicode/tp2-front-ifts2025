@@ -18,14 +18,17 @@ export const Timeline = ({ items }) => {
     <section className="timeline-section">
       <h2 className="titulo-principal">Línea de Tiempo del Proyecto</h2>
       <div className="timeline-container">
-        {items.map((item, index) => (
-          <TimelineItem
-            key={index}
-            date={item.date}
-            title={item.title}
-            content={item.content}
-          />
-        ))}
+        {items
+          .slice()
+          .sort((a, b) => a.id - b.id)
+          .map((item, index) => (
+            <TimelineItem
+              key={index}
+              date={item.date}
+              title={item.title}
+              content={item.content}
+            />
+          ))}
       </div>
     </section>
   )

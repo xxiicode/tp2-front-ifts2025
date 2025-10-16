@@ -126,6 +126,9 @@ details p {
   font-family: var(--font-2p), monospace;
   /* fuente retro */
   text-align: left;
+  & p {
+    margin-bottom: 0;
+  }
 }
 
 /* Alterna izquierda/derecha */

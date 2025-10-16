@@ -3,10 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Aside from './components/Aside.jsx'
 import Home from './pages/Home.jsx'
 import PlayMario from './pages/PlayMario.jsx'
-
-import LeanPage from './pages/Lean.jsx'
-import MartinPage from './pages/Martin.jsx'
 import BitacoraPage from './pages/Bitacora.jsx'
+import TeamCard from './components/TeamCard.jsx'
 
 function App () {
   return (
@@ -18,8 +16,7 @@ function App () {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/bitacora" element={<BitacoraPage />} />
-              <Route path="/lean" element={<LeanPage />} />
-              <Route path="/miembros" element={<MartinPage />} />
+              <Route path="/:nombre" element={<TeamCard />} />
               <Route path='/playmario' element={<PlayMario />} />
             </Routes>
           </main>

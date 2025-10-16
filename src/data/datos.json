@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "rutaId": "lean",
+    "nombre": "Lean",
+    "ubicacion": "Camarones",
+    "edad": 38,
+    "imagen": "src/assets/imgs/sm-lean.jpeg",
+    "initialCoins":22,
+    "habilidades": [
+      { "titulo": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { "titulo": "JavaScript", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { "titulo": "n8n", "link": "https://n8n.io" },
+      { "titulo": "Design systems", "link": "#" },
+      { "titulo": "Deployment", "link": "#" }
+    ],
+    "peliculas": [
+      { "titulo": "Birdboy", "link": "#" },
+      { "titulo": "Akira", "link": "#" },
+      { "titulo": "Tekkonkinkreet", "link": "#" },
+      { "titulo": "Kubo and the Two Strings", "link": "#" }
+    ],
+    "musica": [
+      { "titulo": "Ciudad de Brahman (1999) – Los Natas", "link": "#" },
+      { "titulo": "The Power to Believe (2003) – King Crimson", "link": "#" },
+      { "titulo": "Entre dos aguas (1981) – Paco de Lucía", "link": "#" }
+    ]
+  },
+  {
+    "id": 2,
+    "rutaId": "martin",
+    "nombre": "Martin",
+    "ubicacion": "Ciudad de Buenos Aires",
+    "edad": 39,
+    "imagen": "src/assets/imgs/sm-lean.jpeg",
+        "initialCoins":11,
+    "habilidades": [
+      { "titulo": "HTML", "link": "#" },
+      { "titulo": "Python", "link": "#" },
+      { "titulo": "Photoshop", "link": "#" },
+      { "titulo": "Trabajo en equipo", "link": "#" }
+    ],
+    "peliculas": [
+      { "titulo": "Matrix", "link": "#" },
+      { "titulo": "Volver al futuro", "link": "#" },
+      { "titulo": "Interestelar", "link": "#" }
+    ],
+    "musica": [
+      { "titulo": "Attaque 77", "link": "#" },
+      { "titulo": "Ramones", "link": "#" },
+      { "titulo": "Red Hot Chilli Peppers", "link": "#" }
+    ]
+  }
+]

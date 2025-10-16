@@ -41,6 +41,24 @@
     border: 2px solid #294a7a;
 }
 
+.lista {
+    text-align: left;
+    
+    & h2 {
+    font-family: var(--font-title);
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: #ffd166;
+    }
+    & li {
+        list-style: square inside;
+        & a {
+        font-family: var(--font-mario);
+    }
+}
+
+}
+
 /* ===== Team Card Responsive ===== */
 @media (max-width: 900px) {
     .team-card {
