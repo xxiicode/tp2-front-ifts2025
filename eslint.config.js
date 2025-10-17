@@ -38,7 +38,7 @@ export default [
       'space-before-blocks': ['error', 'always'],
       'keyword-spacing': ['error', { before: true, after: true }],
       'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      'no-console': 'warn',
+      'no-console': 'off',
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
       'no-trailing-spaces': 'error',
       'object-curly-spacing': ['error', 'always'],

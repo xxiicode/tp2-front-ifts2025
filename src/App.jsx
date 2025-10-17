@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import PlayMario from './pages/PlayMario.jsx'
 import BitacoraPage from './pages/Bitacora.jsx'
 import TeamCard from './components/TeamCard.jsx'
+import { PkmSection } from './components/PkmTeam.jsx'
 
 function App () {
   return (
@@ -18,6 +19,7 @@ function App () {
               <Route path="/bitacora" element={<BitacoraPage />} />
               <Route path="/:nombre" element={<TeamCard />} />
               <Route path='/playmario' element={<PlayMario />} />
+              <Route path='/pkmteam' element={<PkmSection />} />
             </Routes>
           </main>
         </BrowserRouter>
