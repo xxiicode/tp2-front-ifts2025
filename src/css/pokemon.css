@@ -1,14 +1,15 @@
 .pkm-section {
     display: flex;
-    padding-block: 25px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     gap: 10px;
+    padding-block: 25px;
     position: relative;
-    background: rgb(116, 47, 181);
     margin-inline: auto;
+    background: rgb(116, 47, 181);
 
+    /* Tarjeta de Pokémon */
     & .pkm-card {
         width: 450px;
         height: 230px;
@@ -21,30 +22,57 @@
         border-radius: 8px;
         position: relative;
 
-        &:before {
+        /* Pokebola decorativa */
+        &::before {
             content: "";
+            background-image: url('/src/assets/imgs/pokeball.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('/src/assets/imgs/pokeball.png');
+            position: absolute;
             height: 80px;
             width: 80px;
             left: -25px;
-            position: absolute
+        }
+
+
+        & .pkm-img {
+            position: relative;
+            width: 200px;
+            height: 200px;
         }
 
         & .pkm-img img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 200px;
+            height: auto;
+            transition: opacity 0.2s ease;
+        }
+
+
+        & .pkm-img img.shiny {
+            opacity: 0;
+        }
+
+
+        &:hover .pkm-img img.shiny {
+            opacity: 1;
+        }
+
+        &:hover .pkm-img img.normal {
+            opacity: 0;
         }
 
         & .pkm-content {
-            border-left: black solid 2px;
+            border-left: 2px solid black;
             text-align: left;
             padding-left: 5px;
+            color: black;
 
             & p {
                 margin: 0;
-                color: black;
 
                 & span {
                     font-weight: 800;
@@ -55,18 +83,28 @@
 }
 
 
+/* Animaciones de entrada para las tarjetas de Pokémon */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-.pkm-card img.shiny {
-display: none;
+.pkm-section .pkm-card {
+  /* ... tus estilos anteriores ... */
+  animation: cardEnter 0.6s ease forwards;
   opacity: 0;
 }
 
-.pkm-card:hover img.shiny {
-  opacity: 1;
-  display: block;
-}
-
-.pkm-card:hover img.normal {
-  opacity: 0;
-  display: none;
-}
+/* Pequeño delay en cada card para efecto escalonado */
+.pkm-card:nth-child(1) { animation-delay: 0.1s; }
+.pkm-card:nth-child(2) { animation-delay: 0.2s; }
+.pkm-card:nth-child(3) { animation-delay: 0.3s; }
+.pkm-card:nth-child(4) { animation-delay: 0.4s; }
+.pkm-card:nth-child(5) { animation-delay: 0.5s; }
+.pkm-card:nth-child(6) { animation-delay: 0.6s; }
