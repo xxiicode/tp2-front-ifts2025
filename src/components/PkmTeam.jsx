@@ -42,7 +42,7 @@ export const PkmSection = () => {
     <section className='pkm-section'>
       <h1>Equipo Pokémon</h1>
       {pkms.map((pkm) => {
-        return <PkmCard pokemon={pkm} />
+        return <PkmCard key={pkm.id} pokemon={pkm} />
       })}
     </section>
   )
