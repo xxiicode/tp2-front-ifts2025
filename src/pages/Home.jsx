@@ -86,13 +86,13 @@ const Home = () => {
           <CardMember
             to="/martin"
             nombre="Martin"
-            img="./src/assets/imgs/sm-lean.jpeg"
+            img="./src/assets/imgs/sm-martin.webp"
             imgHover="./src/assets/imgs/card-Martin.webp"
           />
           <CardMember
             to="/lean"
             nombre="Leandro"
-            img='./src/assets/imgs/sm-lean.jpeg'
+            img='./src/assets/imgs/sm-lean.webp'
             imgHover="./src/assets/imgs/card-Leandro.webp"
           />
         </div>
