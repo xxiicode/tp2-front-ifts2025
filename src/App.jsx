@@ -6,6 +6,7 @@ import PlayMario from './pages/PlayMario.jsx'
 import BitacoraPage from './pages/Bitacora.jsx'
 import TeamCard from './components/TeamCard.jsx'
 import { PkmSection } from './components/PkmTeam.jsx'
+import NesGamesPage from './pages/NesGamesPage'
 
 function App () {
   return (
@@ -20,6 +21,7 @@ function App () {
               <Route path="/:nombre" element={<TeamCard />} />
               <Route path='/playmario' element={<PlayMario />} />
               <Route path='/pkmteam' element={<PkmSection />} />
+              <Route path="/nesgames" element={<NesGamesPage />} />
             </Routes>
           </main>
         </BrowserRouter>

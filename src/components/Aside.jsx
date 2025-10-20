@@ -39,6 +39,9 @@ const Aside = () => {
               <Link to="/pkmteam">Equipo pkm</Link>
             </li>
             <li>
+            <Link to="/nesgames">Juegos NES</Link>
+            </li>
+            <li>
               <Link to="/playmario">Jugar al Mario</Link>
             </li>
           </ul>
