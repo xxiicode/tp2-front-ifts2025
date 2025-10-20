@@ -142,8 +142,8 @@ section h2 {
 }
 
 .card-member img {
-    width: 250px;
-    height: auto;
+    width: 300px;
+    height: 400px;
     display: block;
     border-radius: 10px;
     margin-bottom: 0.5rem;

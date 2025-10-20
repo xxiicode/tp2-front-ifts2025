@@ -35,9 +35,9 @@
     "imagen": "src/assets/imgs/sm-martin.webp",
         "initialCoins":11,
     "habilidades": [
-      { "titulo": "HTML", "link": "#" },
-      { "titulo": "Python", "link": "#" },
-      { "titulo": "Photoshop", "link": "#" },
+      { "titulo": "HTML", "link": "https://lenguajehtml.com/" },
+      { "titulo": "Python", "link": "https://docs.python.org/es/3.14/" },
+      { "titulo": "Photoshop", "link": "https://photoshop.adobe.com/?promoid=DZTGZS8L&mv=other&mv2=unav&lang=es" },
       { "titulo": "Trabajo en equipo", "link": "#" }
     ],
     "peliculas": [
