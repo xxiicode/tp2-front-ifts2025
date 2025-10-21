@@ -60,37 +60,37 @@ const timelineEntries = [
   {
     id: 6,
     date: '22/09/25',
-    title: '🚀 Inicio del TP2',
+    title: 'Inicio del TP2',
     content: 'Revisión de la consigna y armado del entorno React con Vite.'
   },
   {
     id: 5,
     date: '28/09/25',
-    title: '🧩 Componentización',
+    title: 'Componentización',
     content: 'Creación del Sidebar, Home y componentes reutilizables.'
   },
   {
     id: 4,
     date: '05/10/25',
-    title: '💾 Datos Locales y API',
+    title: 'Datos Locales y API',
     content: 'Implementación del archivo JSON y consumo de la PokeAPI.'
   },
   {
     id: 3,
     date: '10/10/25',
-    title: '📱 Diseño Responsivo',
+    title: 'Diseño Responsivo',
     content: 'Ajustes visuales y pruebas en diferentes dispositivos.'
   },
   {
     id: 2,
     date: '15/10/25',
-    title: '📊 Diagramas y README',
+    title: 'Diagramas y README',
     content: 'Creación del Árbol de Renderizado, estructura de carpetas y documentación.'
   },
   {
     id: 1,
     date: '20/10/25',
-    title: '✅ Entrega Final',
+    title: 'Entrega Final',
     content: 'Deploy en Vercel y subida del proyecto al repositorio de GitHub.'
   },
 ]
