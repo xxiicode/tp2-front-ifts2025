@@ -48,8 +48,8 @@ const Aside = () => {
         </nav>
 
         <footer className="aside-footer">
-          <p>2025 - Grupo X -</p>
-          <a className="github" href="">
+          <p>2025 - Grupo 19 -</p>
+          <a className="github" href="https://github.com/xxiicode/tp2-front-ifts2025" target="_blank" rel="noopener noreferrer">
             Repositorio
           </a>
         </footer>
