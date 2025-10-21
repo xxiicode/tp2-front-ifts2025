@@ -5,7 +5,7 @@
     "nombre": "Lean",
     "ubicacion": "Camarones",
     "edad": 38,
-    "imagen": "src/assets/imgs/sm-lean.webp",
+    "imagen": "/imgs/sm-lean.webp",
     "initialCoins":22,
     "habilidades": [
       { "titulo": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
@@ -32,7 +32,7 @@
     "nombre": "Martin",
     "ubicacion": "Ciudad de Buenos Aires",
     "edad": 39,
-    "imagen": "src/assets/imgs/sm-martin.webp",
+    "imagen": "/imgs/sm-martin.webp",
         "initialCoins":11,
     "habilidades": [
       { "titulo": "HTML", "link": "https://lenguajehtml.com/" },

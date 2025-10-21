@@ -25,7 +25,7 @@
         /* Pokebola decorativa */
         &::before {
             content: "";
-            background-image: url('/src/assets/imgs/pokeball.png');
+            background-image: url('/imgs/pokeball.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;

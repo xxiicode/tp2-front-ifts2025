@@ -38,28 +38,28 @@ const Home = () => {
         <h2 className="titulo-principal">Tecnologías</h2>
         <ul className="tech-list" role="list">
           <li className="tech-item">
-            <img src="src/assets/imgs/logo-html.webp" alt="HTML" title="HTML" />
+            <img src="/imgs/logo-html.webp" alt="HTML" title="HTML" />
           </li>
           <li className="tech-item">
-            <img src="src/assets/imgs/logo-css.webp" alt="CSS" title="CSS" />
+            <img src="/imgs/logo-css.webp" alt="CSS" title="CSS" />
           </li>
           <li className="tech-item">
             <img
-              src="src/assets/imgs/logo-javascript.webp"
+              src="/imgs/logo-javascript.webp"
               alt="JavaScript"
               title="JavaScript"
             />
           </li>
           <li className="tech-item">
             <img
-              src="src/assets/imgs/logo-visual.webp"
+              src="/imgs/logo-visual.webp"
               alt="Visual Studio Code"
               title="Visual Studio Code"
             />
           </li>
           <li className="tech-item">
             <img
-              src="src/assets/imgs/logo-github.webp"
+              src="/imgs/logo-github.webp"
               alt="GitHub"
               title="GitHub"
             />
@@ -86,14 +86,14 @@ const Home = () => {
           <CardMember
             to="/martin"
             nombre="Martin"
-            img="./src/assets/imgs/sm-martin.webp"
-            imgHover="./src/assets/imgs/card-Martin.webp"
+            img="/imgs/sm-martin.webp"
+            imgHover="/imgs/card-Martin.webp"
           />
           <CardMember
             to="/lean"
             nombre="Leandro"
-            img='./src/assets/imgs/sm-lean.webp'
-            imgHover="./src/assets/imgs/card-Leandro.webp"
+            img='/imgs/sm-lean.webp'
+            imgHover="/imgs/card-Leandro.webp"
           />
         </div>
       </section>

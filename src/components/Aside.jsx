@@ -9,7 +9,7 @@ const Aside = () => {
         <div className="aside-logo">
           <a href="#inicio" className="logo">
             <img
-              src="./src/assets/imgs/logo-inicio.webp"
+              src="/imgs/logo-inicio.webp"
               alt="TechVerse logo"
             />
           </a>
@@ -39,7 +39,7 @@ const Aside = () => {
               <Link to="/pkmteam">Equipo pkm</Link>
             </li>
             <li>
-            <Link to="/nesgames">Juegos NES</Link>
+              <Link to="/nesgames">Juegos NES</Link>
             </li>
             <li>
               <Link to="/playmario">Jugar al Mario</Link>
