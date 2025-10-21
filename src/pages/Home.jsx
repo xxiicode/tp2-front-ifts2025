@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { SoundBtn } from '../components/SoundBtn'
+/* import { ground } from '../assets/imgs/ground.png' */
+
 
 function CardMember ({ to, nombre, img, imgHover }) {
   const [hover, setHover] = useState(false)

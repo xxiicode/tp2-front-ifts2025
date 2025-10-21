@@ -23,26 +23,33 @@ const Aside = () => {
             </li>
             <li>
               <SoundWrapper sound={coinSfx}>
-                <Link to="/proyecto">Nuestro proyecto</Link>
+                <Link to="/lean">Lean</Link>
               </SoundWrapper>
             </li>
             <li>
-              <Link to="/lean">Lean</Link>
+            <SoundWrapper sound={coinSfx}>
+                <Link to="/martin">Martin</Link>
+              </SoundWrapper>
             </li>
             <li>
-              <Link to="/martin">Martin</Link>
+            <SoundWrapper sound={coinSfx}>
+                <Link to="/bitacora">Bitacora</Link>
+              </SoundWrapper>
             </li>
             <li>
-              <Link to="/bitacora">Bitacora</Link>
+            <SoundWrapper sound={coinSfx}>
+                <Link to="/pkmteam">Equipo pkm</Link>
+              </SoundWrapper>
             </li>
             <li>
-              <Link to="/pkmteam">Equipo pkm</Link>
+            <SoundWrapper sound={coinSfx}>
+                <Link to="/nesgames">Juegos NES</Link>
+              </SoundWrapper>
             </li>
             <li>
-              <Link to="/nesgames">Juegos NES</Link>
-            </li>
-            <li>
-              <Link to="/playmario">Jugar al Mario</Link>
+            <SoundWrapper sound={coinSfx}>
+                <Link to="/playmario">Jugar al Mario</Link>
+              </SoundWrapper>
             </li>
           </ul>
         </nav>

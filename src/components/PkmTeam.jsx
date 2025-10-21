@@ -39,11 +39,23 @@ export const PkmSection = () => {
   }, [pkmArray])
 
   return (
-    <section className='pkm-section'>
-      <h1>Equipo Pokémon</h1>
-      {pkms.map((pkm) => {
-        return <PkmCard key={pkm.id} pokemon={pkm} />
-      })}
+    <section className='pkm-section' style={{ textAlign: 'center' }}>
+      <h1 style={{ color: '#FFD700', marginBottom: '10px' }}>Nuestro Equipo Pokémon</h1>
+      <p style={{
+        color: '#ddd',
+        fontSize: '14px',
+        maxWidth: '600px',
+        margin: '0 auto 30px auto'
+      }}>
+        Este es el equipo Pokémon que representa a nuestro grupo: una mezcla de fuerza, estrategia y espíritu retro.
+        Cada miembro refleja una parte del equipo de desarrollo.
+      </p>
+
+      <div className="pkm-grid">
+        {pkms.map((pkm) => (
+          <PkmCard key={pkm.id} pokemon={pkm} />
+        ))}
+      </div>
     </section>
   )
 }
