@@ -81,6 +81,21 @@
         border-right: none;
         border-bottom: 1px solid var(--color-borde);
     }
+
+    /* Compactar header del aside en móviles */
+    .aside .aside-logo {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .aside .aside-logo .logo img {
+        height: 56px;
+    }
+
+    /* Mejorar navegabilidad en pantallas pequeñas */
+    .aside .main-nav ul li a {
+        height: 44px;
+        font-size: 0.95rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {

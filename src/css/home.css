@@ -192,11 +192,27 @@ section h2 {
 /* ===== Home Responsive ===== */
 @media (max-width: 768px) {
     .hero {
-        min-height: 280px;
+        min-height: 240px;
     }
 
     .tech-list {
         gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .section-cards .cards {
+        flex-wrap: wrap;
+    }
+
+    .card-member img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+
+    .section-project .project-panel {
+        height: auto;
+        padding: 1rem;
     }
 }
 
