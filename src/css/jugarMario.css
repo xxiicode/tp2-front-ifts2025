@@ -16,7 +16,6 @@
 
 canvas {
   width: 100%;
-  max-width: 900px;
   aspect-ratio: 55/42;
   position: static;
   display: block;
