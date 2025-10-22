@@ -1,38 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">TechVerse 8‑Bit Logo</title>
-  <desc id="desc">Logotipo estilo 8‑bit inspirado en un bloque de pregunta de Mario con corchetes de código</desc>
-  <!-- Outer shadow -->
-  <rect x="10" y="18" width="236" height="228" rx="8" fill="#0B0E13"/>
-  <!-- Block base -->
-  <rect x="8" y="8" width="240" height="240" rx="8" fill="#F5C97A" stroke="#5C3C0D" stroke-width="12"/>
-  <!-- Inner bevel -->
-  <rect x="28" y="28" width="200" height="200" rx="4" fill="#F9E2B3" opacity="0.45"/>
-  <!-- Pixel screws -->
-  <circle cx="36" cy="36" r="6" fill="#5C3C0D"/>
-  <circle cx="220" cy="36" r="6" fill="#5C3C0D"/>
-  <circle cx="36" cy="220" r="6" fill="#5C3C0D"/>
-  <circle cx="220" cy="220" r="6" fill="#5C3C0D"/>
-
-  <!-- 8-bit code brackets -->
-  <g filter="url(#shadow)">
-    <path d="M96 76 H76 V92 H64 V108 H52 V124 H64 V140 H76 V156 H96 V140 H84 V124 H96 V108 H84 V92 H96 Z" fill="#FFFFFF"/>
-    <path d="M160 76 H180 V92 H192 V108 H204 V124 H192 V140 H180 V156 H160 V140 H172 V124 H160 V108 H172 V92 H160 Z" fill="#FFFFFF"/>
-  </g>
-
-  <!-- Tiny TV monogram at bottom -->
-  <g transform="translate(78,190)">
-    <rect x="0" y="0" width="100" height="22" rx="2" fill="#0B0E13" opacity="0.85"/>
-    <rect x="10" y="6" width="14" height="10" fill="#08B3DE"/>
-    <rect x="28" y="6" width="14" height="10" fill="#94DEE7"/>
-    <rect x="48" y="6" width="6" height="10" fill="#FD4D36"/>
-    <rect x="58" y="6" width="6" height="10" fill="#FFD166"/>
-    <rect x="68" y="6" width="22" height="10" fill="#00AE00"/>
-  </g>
-
-  <defs>
-    <filter id="shadow" x="0" y="0" width="256" height="256" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
-    </filter>
-  </defs>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+<title  id="title">TechVerse 8‑Bit Logo</title>
+<desc  id="desc">Logotipo estilo 8‑bit inspirado en un bloque de pregunta de Mario con corchetes de código</desc>
+<path fill="#0B0E13" d="M18,18h220c4.418,0,8,3.582,8,8v212c0,4.418-3.582,8-8,8H18c-4.418,0-8-3.582-8-8V26
+	C10,21.582,13.582,18,18,18z"/>
+<path fill="#F5C97A" stroke="#5C3C0D" stroke-width="12" d="M16,8h224c4.418,0,8,3.582,8,8v224c0,4.418-3.582,8-8,8H16
+	c-4.418,0-8-3.582-8-8V16C8,11.582,11.582,8,16,8z"/>
+<path opacity="0.45" fill="#F9E2B3" enable-background="new    " d="M32,28h192c2.209,0,4,1.791,4,4v192c0,2.209-1.791,4-4,4H32
+	c-2.209,0-4-1.791-4-4V32C28,29.791,29.791,28,32,28z"/>
+<circle fill="#5C3C0D" cx="36" cy="36" r="6"/>
+<circle fill="#5C3C0D" cx="220" cy="36" r="6"/>
+<circle fill="#5C3C0D" cx="36" cy="220" r="6"/>
+<circle fill="#5C3C0D" cx="220" cy="220" r="6"/>
+<g>
+	<path fill="#FFFFFF" d="M68,61.786H48v23.8H36v23.8H24v23.8h12v23.799h12v23.801h20v-23.801H56v-23.799h12v-23.8H56v-23.8h12
+		V61.786z"/>
+	<path fill="#FFFFFF" d="M186,61.786h20v23.8h12v23.8h12v23.8h-12v23.799h-12v23.801h-20v-23.801h12v-23.799h-12v-23.8h12v-23.8h-12
+		V61.786z"/>
+</g>
+<g transform="translate(78,190)">
+	<path opacity="0.85" fill="#0B0E13" enable-background="new    " d="M2,0h96c1.104,0,2,0.896,2,2v18c0,1.104-0.896,2-2,2H2
+		c-1.104,0-2-0.896-2-2V2C0,0.896,0.896,0,2,0z"/>
+	<rect x="10" y="6" fill="#08B3DE" width="14" height="10"/>
+	<rect x="28" y="6" fill="#94DEE7" width="14" height="10"/>
+	<rect x="48" y="6" fill="#FD4D36" width="6" height="10"/>
+	<rect x="58" y="6" fill="#FFD166" width="6" height="10"/>
+	<rect x="68" y="6" fill="#00AE00" width="22" height="10"/>
+</g>
+<g>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M165.648,151.854c-12.115,0-24.167,0-36.289,0c0-4.086,0-8.161,0-12.345
+			c7.936,0,15.886,0,23.897,0c0-3.907,0-7.707,0-11.6c-7.929,0-15.879,0-23.897,0c0-12.439,0-24.786,0-37.193
+			c12.07,0,24.144,0,36.289,0C165.648,111.055,165.648,131.4,165.648,151.854z M141.787,103.874c0,3.897,0,7.689,0,11.501
+			c3.856,0,7.648,0,11.451,0c0-3.87,0-7.686,0-11.501C149.388,103.874,145.617,103.874,141.787,103.874z"/>
+	</g>
+</g>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M89.693,151.45c0-4.141,0-8.196,0-12.336c4.106,0,8.184,0,12.331,0
+		c0-8.032,0-15.979,0-24.029c-4.083,0-8.156,0-12.295,0c0-3.926,0-7.748,0-11.67c4.088,0,8.165,0,12.34,0c0-4.142,0-8.187,0-12.293
+		c3.894,0,7.689,0,11.592,0c0,15.944,0,31.89,0,47.941c4.177,0,8.25,0,12.375,0c0,4.18,0,8.254,0,12.388
+		C113.922,151.45,101.851,151.45,89.693,151.45z"/>
+</g>
 </svg>
