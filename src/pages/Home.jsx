@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { SoundBtn } from '../components/SoundBtn'
 /* import { ground } from '../assets/imgs/ground.png' */
 
-
 function CardMember ({ to, nombre, img, imgHover }) {
   const [hover, setHover] = useState(false)
 
@@ -31,7 +30,7 @@ const Home = () => {
       {/* Hero */}
       <section className="hero" aria-label="Portada Hola Mundo">
         <div className="hero__content">
-          <h1 className="mario">HELLO WORLD</h1>
+          <h1 className="mario">HELLO 8-Bit WORLD</h1>
         </div>
       </section>
 
@@ -72,10 +71,11 @@ const Home = () => {
       {/* Texto/Intro */}
       <section className="section-intro">
         <div className="intro-box">
-          <h3>¡Bienvenido a TechVerse!</h3>
+          <h3>¡Bienvenido al Mundo 8-Bit!</h3>
           <p>
-            Un multiverso digital donde cada integrante tiene su estilo. <br />
-            ¡Eligí uno y sumergite en la experiencia de cada portal!
+            Un hub retro inspirado en Mario, la NES y el pixel art. <br/>
+            Cada integrante agrego su propia nostalgia <br/>
+            recorre nuestros recuerdos y disfruta!
           </p>
         </div>
       </section>
