@@ -9,8 +9,8 @@ const Aside = () => {
         <div className="aside-logo">
           <a href="#inicio" className="logo">
             <img
-              src="/imgs/logo-inicio.webp"
-              alt="TechVerse logo"
+              src="/imgs/logo-8bit.svg"
+              alt="8‑Bit logo"
             />
           </a>
         </div>
@@ -27,27 +27,27 @@ const Aside = () => {
               </SoundWrapper>
             </li>
             <li>
-            <SoundWrapper sound={coinSfx}>
+              <SoundWrapper sound={coinSfx}>
                 <Link to="/martin">Martin</Link>
               </SoundWrapper>
             </li>
             <li>
-            <SoundWrapper sound={coinSfx}>
+              <SoundWrapper sound={coinSfx}>
                 <Link to="/bitacora">Bitacora</Link>
               </SoundWrapper>
             </li>
             <li>
-            <SoundWrapper sound={coinSfx}>
+              <SoundWrapper sound={coinSfx}>
                 <Link to="/pkmteam">Equipo pkm</Link>
               </SoundWrapper>
             </li>
             <li>
-            <SoundWrapper sound={coinSfx}>
+              <SoundWrapper sound={coinSfx}>
                 <Link to="/nesgames">Juegos NES</Link>
               </SoundWrapper>
             </li>
             <li>
-            <SoundWrapper sound={coinSfx}>
+              <SoundWrapper sound={coinSfx}>
                 <Link to="/playmario">Jugar al Mario</Link>
               </SoundWrapper>
             </li>
