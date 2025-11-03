@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { SoundBtn } from '../components/SoundBtn'
-/* import { ground } from '../assets/imgs/ground.png' */
+import { motion } from "framer-motion";
+import "animate.css";
+
 
 function CardMember ({ to, nombre, img, imgHover }) {
   const [hover, setHover] = useState(false)
@@ -28,60 +30,64 @@ const Home = () => {
   return (
     <>
       {/* Hero */}
-      <section className="hero" aria-label="Portada Hola Mundo">
+      <motion.section
+        className="hero animate__animated animate__fadeInDown"
+        aria-label="Portada Hola Mundo"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="hero__content">
           <h1 className="mario">HELLO 8-Bit WORLD</h1>
         </div>
-      </section>
+      </motion.section>
 
       {/* Tecnologías */}
-      <section id="tecnologias" className="section-technologies">
+      <motion.section
+        id="tecnologias"
+        className="section-technologies animate__animated animate__fadeIn"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="titulo-principal">Tecnologías</h2>
         <ul className="tech-list" role="list">
-          <li className="tech-item">
-            <img src="/imgs/logo-html.webp" alt="HTML" title="HTML" />
-          </li>
-          <li className="tech-item">
-            <img src="/imgs/logo-css.webp" alt="CSS" title="CSS" />
-          </li>
-          <li className="tech-item">
-            <img
-              src="/imgs/logo-javascript.webp"
-              alt="JavaScript"
-              title="JavaScript"
-            />
-          </li>
-          <li className="tech-item">
-            <img
-              src="/imgs/logo-visual.webp"
-              alt="Visual Studio Code"
-              title="Visual Studio Code"
-            />
-          </li>
-          <li className="tech-item">
-            <img
-              src="/imgs/logo-github.webp"
-              alt="GitHub"
-              title="GitHub"
-            />
-          </li>
+          <li className="tech-item"><img src="/imgs/logo-html.webp" alt="HTML" title="HTML" /></li>
+          <li className="tech-item"><img src="/imgs/logo-css.webp" alt="CSS" title="CSS" /></li>
+          <li className="tech-item"><img src="/imgs/logo-javascript.webp" alt="JavaScript" title="JavaScript" /></li>
+          <li className="tech-item"><img src="/imgs/logo-visual.webp" alt="Visual Studio Code" title="Visual Studio Code" /></li>
+          <li className="tech-item"><img src="/imgs/logo-github.webp" alt="GitHub" title="GitHub" /></li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* Texto/Intro */}
-      <section className="section-intro">
+      <motion.section
+        className="section-intro animate__animated animate__fadeInUp"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="intro-box">
           <h3>¡Bienvenido al Mundo 8-Bit!</h3>
           <p>
-            Un hub retro inspirado en Mario, la NES y el pixel art. <br/>
-            Cada integrante agrego su propia nostalgia <br/>
-            recorre nuestros recuerdos y disfruta!
+            Un hub retro inspirado en Mario, la NES y el pixel art. <br />
+            Cada integrante agrego su propia nostalgia <br />
+            ¡recorre nuestros recuerdos y disfruta!
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Cards de Miembros / Portales */}
-      <section id="miembros" className="section-cards">
+      <motion.section
+        id="miembros"
+        className="section-cards animate__animated animate__fadeInUp"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="titulo-principal">Portales de integrantes</h2>
         <SoundBtn />
         <div className="cards">
@@ -94,14 +100,21 @@ const Home = () => {
           <CardMember
             to="/lean"
             nombre="Leandro"
-            img='/imgs/sm-lean.webp'
+            img="/imgs/sm-lean.webp"
             imgHover="/imgs/card-Leandro.webp"
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Proyecto */}
-      <section id="proyecto" className="section-project">
+      <motion.section
+        id="proyecto"
+        className="section-project animate__animated animate__zoomIn"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className="titulo-principal">Nuestro proyecto</h2>
         <div className="project-panel">
           <p>
@@ -117,9 +130,10 @@ const Home = () => {
             mantenía una experiencia unificada para el usuario.
           </p>
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }
+
 
 export default Home
