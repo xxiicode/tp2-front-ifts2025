@@ -32,7 +32,7 @@ export const PkmSection = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  const limit = 8
+  const limit = 6
   const offset = (page - 1) * limit
 
   useEffect(() => {
@@ -95,7 +95,7 @@ export const PkmSection = () => {
         maxWidth: '600px',
         margin: '0 auto 30px auto'
       }}>
-        Explorá los Pokémon de forma paginada. Cada página carga 8 Pokémon desde la API oficial.
+        Explorá los Pokémon de forma paginada. Cada página carga 6 Pokémon desde la API oficial.
       </p>
 
       {/* 🔄 Controles de paginación */}
