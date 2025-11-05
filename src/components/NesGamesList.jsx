@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "animate.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { Link } from "react-router-dom"
 
 export function NesGamesList() {
   const [busqueda, setBusqueda] = useState("");
@@ -117,7 +118,27 @@ export function NesGamesList() {
                 borderRadius: "6px",
               }}
             />
-            <h3 style={{ marginTop: "10px", color: "#00ffff" }}>{game.titulo}</h3>
+            <h3
+              style={{
+                marginTop: "10px",
+                color: "#00ffff",
+                transition: "all 0.2s ease",
+              }}
+            >
+              <Link
+                to={`/juego/${game.id}`}
+                style={{
+                  color: "#00ffff",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+                onMouseEnter={(e) => (e.target.style.textShadow = "0 0 10px #00ffff")}
+                onMouseLeave={(e) => (e.target.style.textShadow = "none")}
+              >
+                {game.titulo}
+              </Link>
+            </h3>
+
             <p style={{ fontSize: "14px", color: "#bbb" }}>
               {game.genero} · {game.año}
             </p>

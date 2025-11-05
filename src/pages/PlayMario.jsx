@@ -44,7 +44,7 @@ export default function JugarMario () {
 
   return (
     <div className="container-mario">
-      <h1>🎮 Super Mario Bros (NES)</h1>
+      <h1>Super Mario Bros (NES)</h1>
       <p className="info">
         Usa <kbd>Enter</kbd> para comenzar, <kbd>Z</kbd>/<kbd>X</kbd> para saltar/disparar, y flechas para moverte.
       </p>
