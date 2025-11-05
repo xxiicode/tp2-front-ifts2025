@@ -2,19 +2,31 @@ import { useState } from "react";
 import games from "../data/nesgames.json";
 import { motion } from "framer-motion";
 import "animate.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export function NesGamesList() {
   const [busqueda, setBusqueda] = useState("");
   const [filtroGenero, setFiltroGenero] = useState("Todos");
+  const [lightboxIndex, setLightboxIndex] = useState(-1); 
 
   const generos = ["Todos", ...new Set(games.map((g) => g.genero))];
 
-  // 🔍 Filtro dinámico
+  // Filtro dinámico
   const juegosFiltrados = games.filter((juego) => {
-    const coincideTitulo = juego.titulo.toLowerCase().includes(busqueda.toLowerCase());
-    const coincideGenero = filtroGenero === "Todos" || juego.genero === filtroGenero;
+    const coincideTitulo = juego.titulo
+      .toLowerCase()
+      .includes(busqueda.toLowerCase());
+    const coincideGenero =
+      filtroGenero === "Todos" || juego.genero === filtroGenero;
     return coincideTitulo && coincideGenero;
   });
+
+  //Prepara las imágenes para el Lightbox
+  const slides = juegosFiltrados.map((j) => ({
+    src: j.imagen,
+    description: `${j.titulo} (${j.año}) - ${j.genero}`,
+  }));
 
   return (
     <section style={{ padding: "20px", background: "#1b2838" }}>
@@ -28,7 +40,7 @@ export function NesGamesList() {
         Juegos Clásicos de NES
       </h2>
 
-      {/* 🔧 Controles de búsqueda y filtro */}
+      {/*Controles de búsqueda y filtro */}
       <div
         style={{
           display: "flex",
@@ -71,7 +83,7 @@ export function NesGamesList() {
         </select>
       </div>
 
-      {/* 🕹️ Grid de juegos filtrados */}
+      {/* Grid de juegos filtrados */}
       <div
         style={{
           display: "grid",
@@ -79,7 +91,7 @@ export function NesGamesList() {
           gap: "20px",
         }}
       >
-        {juegosFiltrados.map((game) => (
+        {juegosFiltrados.map((game, i) => (
           <motion.div
             key={game.id}
             className="animate__animated animate__fadeInUp"
@@ -90,9 +102,10 @@ export function NesGamesList() {
               padding: "10px",
               color: "white",
               textAlign: "center",
-              transition: "transform 0.2s",
+              cursor: "pointer",
             }}
             whileHover={{ scale: 1.05 }}
+            onClick={() => setLightboxIndex(i)}
           >
             <img
               src={game.imagen}
@@ -117,6 +130,14 @@ export function NesGamesList() {
           No se encontraron juegos que coincidan con la búsqueda.
         </p>
       )}
+
+     
+      <Lightbox
+        open={lightboxIndex >= 0}
+        close={() => setLightboxIndex(-1)}
+        index={lightboxIndex}
+        slides={slides}
+      />
     </section>
   );
 }
