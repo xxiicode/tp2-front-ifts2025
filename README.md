@@ -40,7 +40,7 @@ El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bi
 |---------|--------------|
 | **Animaciones suaves** | Transiciones de carga y hover en tarjetas usando *Framer Motion* y *Animate.css*. |
 | **Buscador y filtros dinámicos** | Búsqueda en `nesgames.json` y filtrado por género mediante `select`. |
-| **Gestión avanzada de Pokémon** | Integración con la PokéAPI para mostrar 8 Pokémon por página: 6 fijos elegidos por el usuario y 2 aleatorios. Se implementó caché persistente con localStorage para mantener el equipo y el estado incluso tras recargar o cerrar el navegador. |
+| **Gestión avanzada de Pokémon** | Integración con la PokéAPI para mostrar 6 Pokémon por página. Se implementó caché persistente con localStorage para mantener el equipo y el estado incluso tras recargar o cerrar el navegador. |
 | **Galería interactiva** | Implementada con *yet-another-react-lightbox*, con zoom y navegación entre imágenes. |
 | **Emulador NES dinámico** | Usa *Nostalgist.js* para cargar ROMs según el juego seleccionado (`/juego/:id`). |
 
