@@ -21,7 +21,7 @@ function App () {
               <Route path="/bitacora" element={<BitacoraPage />} />
               <Route path="/:nombre" element={<TeamCard />} />
               <Route path='/playmario' element={<PlayMario />} />
-              <Route path="/juego/:id" element={<JugarNes />} />
+              <Route path="/jugar/:id" element={<JugarNes />} />
               <Route path='/pkmteam' element={<PkmSection />} />
               <Route path="/nesgames" element={<NesGamesPage />} />
             </Routes>
