@@ -34,7 +34,7 @@ El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bi
 
 ---
 
-## 🚀 Mejoras Implementadas
+## Mejoras Implementadas
 
 | Mejora | Descripción |
 |---------|--------------|
