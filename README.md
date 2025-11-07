@@ -79,5 +79,3 @@ El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bi
 ## Créditos
 > Desarrollado por **Martín Giménez Gaitán** y **Leandro Bilokapic**  
 > para el espacio curricular **Front-End – IFTS 2025**
-
-antes de iniciar cambiar el nombre de .env.example a .env

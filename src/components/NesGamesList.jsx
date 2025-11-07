@@ -127,8 +127,11 @@ export function NesGamesList() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
           gap: "20px",
+          justifyContent: "center",
+          maxWidth: "1200px",
+          margin: "0 auto",
         }}
       >
         {juegosFiltrados.map((game, index) => (
@@ -142,6 +145,9 @@ export function NesGamesList() {
               padding: "10px",
               color: "white",
               textAlign: "center",
+              width: "100%",
+              maxWidth: "260px",
+              margin: "0 auto",
               transition: "transform 0.2s",
             }}
             whileHover={{ scale: 1.05 }}
