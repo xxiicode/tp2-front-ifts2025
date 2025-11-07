@@ -45,7 +45,7 @@ El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bi
 | **Emulador NES dinámico** | Usa *Nostalgist.js* para cargar ROMs según el juego seleccionado (`/juego/:id`). |
 
 ## Links de los videos
-- **Google Drive:** [https://drive.google.com/drive/folders/1hdbXXoh-dtA7g9b8_VcRQ-TS1J-pa0EN?usp=drive_link](Mejoras)
+- **Google Drive:** [https://drive.google.com/drive/folders/1hdbXXoh-dtA7g9b8_VcRQ-TS1J-pa0EN?usp=drive_link](https://drive.google.com/drive/folders/1hdbXXoh-dtA7g9b8_VcRQ-TS1J-pa0EN?usp=drive_link)
 
 ---
 
