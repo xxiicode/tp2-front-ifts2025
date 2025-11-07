@@ -27,9 +27,11 @@ export function NesGamesList() {
         const data = await response.json();
 
         // Fusión con los datos locales
+        const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
         const fusionados = data.results.map((g) => {
-          const local = gamesLocal.find((l) =>
-            g.name.toLowerCase().includes(l.titulo.toLowerCase())
+          const local = gamesLocal.find(
+            (l) => normalize(g.name) === normalize(l.titulo)
           );
 
           return {

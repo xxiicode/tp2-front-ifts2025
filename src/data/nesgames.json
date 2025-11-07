@@ -18,6 +18,8 @@
     { "id": 17, "titulo": "Blaster Master", "año": 1988, "genero": "Acción", "imagen": "https://upload.wikimedia.org/wikipedia/en/9/99/Blaster_Master_boxart.jpg", "rom": "BMaster.nes" },
     { "id": 18, "titulo": "Kid Icarus", "año": 1986, "genero": "Aventura", "imagen": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Kid_Icarus_NES_box_art.png/250px-Kid_Icarus_NES_box_art.png", "rom": "Kid.nes" },
     { "id": 19, "titulo": "Battletoads", "año": 1991, "genero": "Acción", "imagen": "https://upload.wikimedia.org/wikipedia/en/e/e8/Battletoads_Coverart.png", "rom": "Btoads.nes" },
-    { "id": 20, "titulo": "Zelda II: The Adventure of Link", "año": 1987, "genero": "RPG", "imagen": "https://upload.wikimedia.org/wikipedia/en/f/fd/Zelda_II_The_Adventure_of_Link_box.jpg", "rom": "Zelda2.nes" }
+    { "id": 20, "titulo": "Zelda II: The Adventure of Link", "año": 1987, "genero": "RPG", "imagen": "https://upload.wikimedia.org/wikipedia/en/f/fd/Zelda_II_The_Adventure_of_Link_box.jpg", "rom": "Zelda2.nes" },
+    { "id": 21, "titulo": "Mario Bros", "año": 1983, "genero": "Plataformas", "imagen": "https://img-grouvee-com.b-cdn.net/upload/cache/db/79/db7951538226b7f79dcfe3535e6f43d7.jpg", "rom": "MarioBros.nes" },
+    { "id": 22, "titulo": "Super Mario Bros. 3", "año": 1988, "genero": "Plataforma", "imagen": "https://http2.mlstatic.com/D_NQ_NP_850396-MLB74674758965_022024-O.webp", "rom": "smb3.nes" }
   ]
   
