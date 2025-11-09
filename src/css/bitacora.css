@@ -67,6 +67,23 @@ details p {
   /* sprite de planta */
   background-size: contain;
   /* se ajusta al ancho */
+  /* animación de crecimiento desde la tubería */
+  transform-origin: bottom center;
+  animation: vineGrow 900ms ease-out both;
+}
+
+/* 🌿 Tubería como origen de la planta */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 80px;
+  background: url('../assets/imgs/pipe.svg') no-repeat center bottom;
+  background-size: contain;
+  z-index: 3;
 }
 
 /* Cada ítem */
@@ -151,6 +168,17 @@ details p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Animación de crecimiento de la enredadera */
+@keyframes vineGrow {
+  from { transform: translateX(-50%) scaleY(0); }
+  to   { transform: translateX(-50%) scaleY(1); }
+}
+
+/* Respeta usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-container::before { animation: none; }
 }
 
 /* ===== Responsive: Bitácora / Timeline ===== */
