@@ -67,7 +67,7 @@ export const PkmSection = () => {
           }
           ids = [...fixedTeam, ...randomExtras];
         } else {
-          // Otras páginas 
+          // Otras páginas
           const randomIds = [];
           while (randomIds.length < limit) {
             const id = Math.floor(Math.random() * totalPokemons) + 1;
@@ -108,11 +108,12 @@ export const PkmSection = () => {
           margin: "0 auto 30px auto",
         }}
       >
-        Este es el equipo Pokémon que representa a nuestro grupo: una mezcla de fuerza, estrategia y espíritu,
-        retro. Cada miembro refleja una parte del equipo de desarrollo.
-        Si quieres ver más Pokémon aleatorios, navega entre las páginas.
+        Este es el equipo Pokémon que representa a nuestro grupo: una mezcla de fuerza, estrategia y espíritu retro.
+        Cada miembro refleja una parte del equipo de desarrollo.  
+        Si quieres ver más equipos Pokémon, navega entre las páginas.
       </p>
 
+      {/*Paginación */}
       <div
         style={{
           display: "flex",
@@ -122,21 +123,25 @@ export const PkmSection = () => {
           marginBottom: "20px",
         }}
       >
-        <button
-          onClick={() => setPage((p) => Math.max(1, p - 1))}
-          disabled={page === 1}
-          style={{
-            padding: "10px 16px",
-            borderRadius: "8px",
-            border: "1px solid #444",
-            background: "#222",
-            color: "white",
-            cursor: "pointer",
-          }}
-        >
-          ◀ Anterior
-        </button>
+        {/* Botón Anterior — solo visible si page > 1 */}
+        {page > 1 && (
+          <button
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            style={{
+              padding: "10px 16px",
+              borderRadius: "8px",
+              border: "1px solid #444",
+              background: "#222",
+              color: "white",
+              cursor: "pointer",
+            }}
+          >
+            ◀ Anterior
+          </button>
+        )}
+
         <span style={{ color: "#fff", fontWeight: "bold" }}>Página {page}</span>
+
         <button
           onClick={() => setPage((p) => p + 1)}
           style={{

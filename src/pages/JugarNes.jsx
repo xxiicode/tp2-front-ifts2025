@@ -25,14 +25,26 @@ export default function JugarNes() {
       if (isMobile || !game?.rom) return
       nostalgistRef.current?.exit?.()
       const romUrl = `${location.origin}/roms/${game.rom}`
+      console.log("Intentando cargar ROM desde:", romUrl)
       nostalgistRef.current = await Nostalgist.nes(romUrl)
     } catch (error) {
       console.error('Error launching the game:', error)
     }
   }, [isMobile, game])
 
+  // 🔹 Permitir salir del juego con la tecla ESC
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && nostalgistRef.current) {
+        nostalgistRef.current.exit()
+        nostalgistRef.current = null
+        console.log("Juego cerrado con ESC")
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
     return () => {
+      window.removeEventListener("keydown", handleKeyDown)
       nostalgistRef.current?.exit?.()
       nostalgistRef.current = null
     }
@@ -44,7 +56,7 @@ export default function JugarNes() {
     <div className="container-mario">
       <h1>{game.titulo}</h1>
       <p className="info">
-        Usa <kbd>Enter</kbd> para comenzar, <kbd>Z</kbd>/<kbd>X</kbd> para saltar/disparar, y flechas para moverte.
+        Usa <kbd>Enter</kbd> para comenzar, <kbd>Z</kbd>/<kbd>X</kbd> para saltar/disparar, flechas para moverte y <kbd>ESC</kbd> para salir.
       </p>
       {isMobile ? (
         <div className="mobile-warning">
