@@ -1,71 +1,144 @@
-import { useEffect, useState } from "react";
-import gamesLocal from "../data/nesgames.json";
-import { motion } from "framer-motion";
-import "animate.css";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+/* eslint-disable quotes, semi, indent, comma-dangle */
+import { useEffect, useMemo, useState } from 'react'
+import gamesLocal from '../data/nesgames.json'
+import { motion } from 'framer-motion'
+import 'animate.css'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
+import '../css/nesgames.css'
 
-export function NesGamesList() {
-  const [games, setGames] = useState([]);
-  const [busqueda, setBusqueda] = useState("");
-  const [filtroGenero, setFiltroGenero] = useState("Todos");
-  const [pagina, setPagina] = useState(1);
-  const [totalPaginas, setTotalPaginas] = useState(1);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
+export function NesGamesList () {
+  const [games, setGames] = useState([])
+  const [busqueda, setBusqueda] = useState('')
+  const [filtroGenero, setFiltroGenero] = useState('Todos')
+  const [pagina, setPagina] = useState(1)
+  const [totalPaginas, setTotalPaginas] = useState(1)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
+  const [allGeneros, setAllGeneros] = useState([]) // lista estable de géneros acumulados
+  const [soloJugables, setSoloJugables] = useState(false)
 
-  const API_KEY = import.meta.env.VITE_RAWG_KEY;
-  console.log("API_KEY:", API_KEY);
+  const API_KEY = import.meta.env.VITE_RAWG_KEY
+  const PAGE_SIZE = 20 // limitar a 20 resultados por página
+
+  // Utilidad simple para pasar de "Action" -> "action" o "Beat 'em up" -> "beat-em-up"
+  const slugify = useMemo(() => (str) =>
+    str
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+  , [])
+
+  // Incluir los géneros locales desde el JSON para que el selector siempre los tenga
+  useEffect(() => {
+    const generosLocales = Array.from(new Set((gamesLocal || []).map(g => g.genero).filter(Boolean)))
+    setAllGeneros(prev => Array.from(new Set([...(prev || []), ...generosLocales])))
+  }, [])
 
   // Traer juegos desde la API RAWG
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch(
-          `https://api.rawg.io/api/games?key=${API_KEY}&page=${pagina}&platforms=49&page_size=40`
-        );
-        const data = await response.json();
+        // Construir query con filtros para evitar páginas vacías al filtrar
+  const params = new URLSearchParams()
+  params.set('key', API_KEY)
+  params.set('page', String(pagina))
+  params.set('page_size', String(PAGE_SIZE))
+  params.set('platforms', '49') // 49 = NES
+  if (busqueda.trim()) params.set('search', busqueda.trim())
+  if (filtroGenero !== 'Todos') params.set('genres', slugify(filtroGenero))
 
-        // Fusión con los datos locales
-        const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const response = await fetch(`https://api.rawg.io/api/games?${params.toString()}`)
+  const data = await response.json()
 
-        const fusionados = data.results.map((g) => {
+    // Fusión con los datos locales
+  const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+        const fusionados = (data.results || []).map((g) => {
           const local = gamesLocal.find(
             (l) => normalize(g.name) === normalize(l.titulo)
-          );
+          )
 
           return {
             id: g.id,
             idLocal: local?.id || null, // ID del JSON local
             titulo: g.name,
-            año: g.released?.split("-")[0] || "Desconocido",
-            genero: g.genres?.[0]?.name || "Desconocido",
+            año: g.released?.split('-')[0] || 'Desconocido',
+            genero: g.genres?.[0]?.name || 'Desconocido', // principal para mostrar
+            generos: Array.isArray(g.genres) ? g.genres.map(x => x.name) : [], // todos los géneros
             imagen: g.background_image,
             puedeJugar: !!local,
-          };
-        });
+          }
+        })
 
-        setGames(fusionados);
-        setTotalPaginas(Math.ceil(data.count / 20));
+    setGames(fusionados)
+  setTotalPaginas(Math.ceil((data?.count || 0) / PAGE_SIZE))
+
+        // acumular géneros sin perder los anteriores (que desaparecen si filtramos por uno)
+        const nuevosGeneros = Array.from(new Set((data.results || [])
+          .flatMap(g => (Array.isArray(g.genres) ? g.genres.map(x => x.name) : []))))
+        setAllGeneros(prev => Array.from(new Set([...(prev || []), ...nuevosGeneros])))
       } catch (error) {
-        console.error("Error al traer los juegos:", error);
+        console.error('Error al traer los juegos:', error)
       }
     };
 
-    fetchGames();
-  }, [pagina]);
+    fetchGames()
+  }, [pagina, busqueda, filtroGenero, slugify, API_KEY])
+
+  // Al cambiar búsqueda o género, volver a la primera página para evitar páginas vacías
+  useEffect(() => {
+    setPagina(1)
+  }, [busqueda, filtroGenero])
+
+  // Al cambiar el toggle de "solo jugables", volvemos a la primera página
+  useEffect(() => {
+    setPagina(1)
+  }, [soloJugables])
 
   // Filtrado dinámico
-  const generos = ["Todos", ...new Set(games.map((g) => g.genero))];
+  // Lista de géneros estable (no se reduce al filtrar)
+  const generos = ['Todos', ...allGeneros]
 
-  const juegosFiltrados = games.filter((juego) => {
-    const coincideTitulo = juego.titulo
+  // Fuente de datos según el modo:
+  // - soloJugables: usar únicamente los juegos locales (todos jugables y paginar localmente)
+  // - caso contrario: usar los juegos de la API (ya vienen paginados por RAWG)
+  const juegosLocalesBase = useMemo(() => {
+    return (gamesLocal || []).map((l) => ({
+      id: `local-${l.id}`,
+      idLocal: l.id,
+      titulo: l.titulo,
+      año: String(l.año || '').toString() || 'Desconocido',
+      genero: l.genero || 'Desconocido',
+      generos: l.genero ? [l.genero] : [],
+      imagen: l.imagen,
+      puedeJugar: true,
+    }))
+  }, [])
+
+  const sourceGames = soloJugables ? juegosLocalesBase : games
+
+  const juegosFiltrados = sourceGames.filter((juego) => {
+    const coincideTitulo = (juego.titulo || '')
       .toLowerCase()
-      .includes(busqueda.toLowerCase());
+      .includes((busqueda || '').toLowerCase());
     const coincideGenero =
-      filtroGenero === "Todos" || juego.genero === filtroGenero;
-    return coincideTitulo && coincideGenero;
-  });
+      filtroGenero === 'Todos' || (juego.generos || []).includes(filtroGenero);
+    // En modo soloJugables todos ya son jugables; en modo normal respetar flag
+    const coincideDisponibilidad = !soloJugables ? true : true
+    return coincideTitulo && coincideGenero && coincideDisponibilidad;
+  })
+
+  // Paginación mostrada
+  const totalPaginasToShow = soloJugables
+    ? Math.max(1, Math.ceil(juegosFiltrados.length / PAGE_SIZE))
+    : totalPaginas
+
+  const juegosParaMostrar = soloJugables
+    ? juegosFiltrados.slice((pagina - 1) * PAGE_SIZE, pagina * PAGE_SIZE)
+    : juegosFiltrados
 
   // Renderizado
   return (
@@ -121,20 +194,20 @@ export function NesGamesList() {
             </option>
           ))}
         </select>
+
+        <label style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#fff', userSelect: 'none' }}>
+          <input
+            type="checkbox"
+            checked={soloJugables}
+            onChange={(e) => setSoloJugables(e.target.checked)}
+          />
+          Solo jugables
+        </label>
       </div>
 
-      {/* Grid de juegos */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "20px",
-          justifyContent: "center",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
-        {juegosFiltrados.map((game, index) => (
+      {/* Grid de juegos (máximo 4 columnas) */}
+      <div className='nes-grid'>
+        {juegosParaMostrar.map((game, index) => (
           <motion.div
             key={game.id}
             className="animate__animated animate__fadeInUp"
@@ -195,12 +268,11 @@ export function NesGamesList() {
         ))}
       </div>
 
-      {/* Lightbox */}
       <Lightbox
         open={lightboxOpen}
         close={() => setLightboxOpen(false)}
         index={lightboxIndex}
-        slides={juegosFiltrados.map((g) => ({
+        slides={juegosParaMostrar.map((g) => ({
           src: g.imagen,
           title: g.titulo,
         }))}
@@ -209,10 +281,10 @@ export function NesGamesList() {
       {/* Paginación */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "30px",
-          gap: "10px",
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '30px',
+          gap: '10px',
         }}
       >
         <button
@@ -231,19 +303,19 @@ export function NesGamesList() {
         </button>
 
         <span style={{ color: "#fff", alignSelf: "center" }}>
-          Página {pagina} / {totalPaginas}
+          Página {pagina} / {totalPaginasToShow}
         </span>
 
         <button
           onClick={() => setPagina((p) => p + 1)}
-          disabled={pagina >= totalPaginas}
+          disabled={pagina >= totalPaginasToShow}
           style={{
             padding: "10px 15px",
             borderRadius: "6px",
             border: "none",
-            background: pagina >= totalPaginas ? "#555" : "#00ffff",
+            background: pagina >= totalPaginasToShow ? "#555" : "#00ffff",
             color: "#000",
-            cursor: pagina >= totalPaginas ? "not-allowed" : "pointer",
+            cursor: pagina >= totalPaginasToShow ? "not-allowed" : "pointer",
           }}
         >
           Siguiente ➡
