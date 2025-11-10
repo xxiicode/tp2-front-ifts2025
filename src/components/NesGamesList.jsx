@@ -21,6 +21,20 @@ export function NesGamesList () {
   const API_KEY = import.meta.env.VITE_RAWG_KEY
   const PAGE_SIZE = 20 // limitar a 20 resultados por página
 
+  // Mapeo de géneros a sus slugs correctos de RAWG API
+  const genreSlugMap = useMemo(() => ({
+    'RPG': 'role-playing-games-rpg',
+    'Beat \'em up': 'fighting',
+    'Platformer': 'platformer',
+    'Action': 'action',
+    'Adventure': 'adventure',
+    'Shooter': 'shooter',
+    'Sports': 'sports',
+    'Racing': 'racing',
+    'Arcade': 'arcade',
+    'Puzzle': 'puzzle'
+  }), [])
+
   // Utilidad simple para pasar de "Action" -> "action" o "Beat 'em up" -> "beat-em-up"
   const slugify = useMemo(() => (str) =>
     str
@@ -48,7 +62,11 @@ export function NesGamesList () {
   params.set('page_size', String(PAGE_SIZE))
   params.set('platforms', '49') // 49 = NES
   if (busqueda.trim()) params.set('search', busqueda.trim())
-  if (filtroGenero !== 'Todos') params.set('genres', slugify(filtroGenero))
+  if (filtroGenero !== 'Todos') {
+    // Usar slug específico de RAWG o slugify como fallback
+    const slug = genreSlugMap[filtroGenero] || slugify(filtroGenero)
+    params.set('genres', slug)
+  }
 
   const response = await fetch(`https://api.rawg.io/api/games?${params.toString()}`)
   const data = await response.json()
@@ -86,7 +104,7 @@ export function NesGamesList () {
     };
 
     fetchGames()
-  }, [pagina, busqueda, filtroGenero, slugify, API_KEY])
+  }, [pagina, busqueda, filtroGenero, slugify, genreSlugMap, API_KEY])
 
   // Al cambiar búsqueda o género, volver a la primera página para evitar páginas vacías
   useEffect(() => {
