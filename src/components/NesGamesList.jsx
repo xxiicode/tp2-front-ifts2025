@@ -124,6 +124,7 @@ export function NesGamesList () {
     const coincideTitulo = (juego.titulo || '')
       .toLowerCase()
       .includes((busqueda || '').toLowerCase());
+
     const coincideGenero =
       filtroGenero === 'Todos' || (juego.generos || []).includes(filtroGenero);
     // En modo soloJugables todos ya son jugables; en modo normal respetar flag
