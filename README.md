@@ -1,10 +1,13 @@
 # TP2 – Proyecto React en Equipo
 
 ## Descripción General
-Este proyecto corresponde a la **segunda etapa del sitio del TP1**, migrado completamente a **React**.  
-En esta versión, se implementa una **Single Page Application (SPA)** con navegación interna mediante **React Router**, componentes reutilizables y secciones dinámicas que combinan **datos locales (JSON)** y **API externas**.
+Este proyecto corresponde a la segunda etapa del sitio desarrollado en el TP1, completamente migrado y optimizado en React.
+En esta versión se implementa una Single Page Application (SPA) con navegación dinámica mediante React Router, componentes reutilizables y secciones interactivas que integran tanto datos locales (JSON) como consumo de APIs externas.
 
-El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bits**, con animaciones suaves y elementos interactivos que evocan los clásicos videojuegos de los 80s y 90s.
+El sitio ofrece una experiencia inmersiva con una estética retro gamer inspirada en los videojuegos de los años 80 y 90, utilizando animaciones suaves, efectos de neón y tipografía pixelada.
+Entre sus funcionalidades destacan una galería de juegos clásicos de NES, un emulador funcional basado en Nostalgist.js que permite jugar directamente en el navegador, y una sección de Pokémon dinámica que combina datos locales con información obtenida desde la PokéAPI.
+
+Esta versión refuerza el enfoque en la interactividad, la organización modular del código y la coherencia visual, consolidando un sitio más ágil, moderno y con una clara identidad retro.
 
 ---
 
@@ -24,13 +27,13 @@ El sitio adopta una estética **retro gamer**, inspirada en la era de los **8 bi
 
 | Sección | Descripción |
 |----------|-------------|
-| **Home** | Portada del sitio con presentación del grupo, animaciones de entrada con *Framer Motion* y tarjetas hover interactivas de los integrantes. |
-| **Bitácora** | Registro semanal del avance del proyecto con acordeones y línea de tiempo animada. |
-| **Integrantes** | Fichas individuales que leen datos dinámicos desde `datos.json`, incluyendo secciones como habilidades, películas y música favorita. |
-| **Juegos NES (JSON Local)** | Sección que carga `nesgames.json` con 20 juegos clásicos de Nintendo. Incluye **búsqueda por texto**, **filtros por género** y una **galería interactiva con lightbox y zoom**. |
-| **Emulador NES (Nostalgist.js)** | Nueva funcionalidad que permite **jugar directamente desde el navegador**. Cada juego del catálogo puede cargar su propia ROM desde `/public/roms`. |
-| **PokeTeam (API Pública)** | Sección que consume la **PokeAPI**. Los Pokémon se muestran con tarjetas dinámicas, imágenes alternando entre versión normal y shiny, y paginación controlada. |
-| **Diagramas** | Incluye el **Árbol de Renderizado** y la **Estructura de Carpetas**, realizados en *draw.io*. |
+| **Home**                             | Pantalla de bienvenida con presentación del grupo, animaciones de entrada fluidas creadas con *Framer Motion* y tarjetas interactivas con efecto *hover*. Define la identidad retro del sitio, con colores neón y tipografía pixelada. |
+| **Bitácora**                         | Registro cronológico del proceso de desarrollo, presentado mediante **acordeones dinámicos** y una **línea de tiempo animada**. Cada semana documenta decisiones técnicas, avances y aprendizajes del equipo. |
+| **Integrantes**                      | Muestra fichas individuales generadas a partir de un archivo `datos.json`. Cada tarjeta incluye información dinámica sobre los integrantes, como habilidades, intereses y secciones personalizadas (películas, música, etc.). |
+| **Juegos NES (JSON Local)**          | Galería de juegos clásicos obtenidos desde `nesgames.json`, con **búsqueda por título**, **filtros por género** y **paginación dinámica** que muestra 20 juegos por página. Además, incluye una **galería interactiva con Lightbox y zoom** para visualizar las portadas en detalle. |
+| **Emulador NES (Nostalgist.js)**     | Permite **jugar directamente en el navegador** los títulos listados en el catálogo NES. Cada juego carga su propia ROM desde `/public/roms`. Se incluye soporte para **teclado**, opción de **salir con la tecla ESC** y control de compatibilidad con dispositivos móviles. |
+| **PokeTeam (API Pública – PokéAPI)** | Sección que consume la **PokéAPI** para mostrar equipos Pokémon de manera dinámica. La primera página muestra el **equipo principal definido en `pokemonTeam.json`**, mientras que las siguientes generan **equipos aleatorios**. Las tarjetas alternan entre **sprites normales y shiny**, con **caché persistente en localStorage** y navegación por páginas. |
+| **Diagramas**                        | Contiene los **diagramas de Árbol de Renderizado y Estructura de Carpetas**, realizados en *draw.io*, que representan la jerarquía de componentes y la organización modular del proyecto. |
 
 ---
 
