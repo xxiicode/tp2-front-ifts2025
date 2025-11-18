@@ -52,7 +52,6 @@ section h2 {
 
 /* ===== Tecnologías ===== */
 .section-technologies {
-    padding-block: 15px;
     background: radial-gradient(ellipse at top,
             rgba(0, 0, 0, 0.35),
             transparent 60%);
