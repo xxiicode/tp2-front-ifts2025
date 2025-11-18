@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "rutaId": "lean",
+    "nombre": "Lean",
+    "ubicacion": "Camarones",
+    "edad": 38,
+    "imagen": "/imgs/sm-lean.webp",
+    "initialCoins":22,
+    "habilidades": [
+      { "titulo": "CSS", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { "titulo": "JavaScript", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { "titulo": "n8n", "link": "https://n8n.io" },
+      { "titulo": "Design systems", "link": "#" },
+      { "titulo": "Deployment", "link": "#" }
+    ],
+    "peliculas": [
+      { "titulo": "Birdboy", "link": "https://www.youtube.com/watch?v=f4WDZG8cWo8" },
+      { "titulo": "Akira", "link": "https://www.youtube.com/watch?v=vvnNpjH93NU" },
+      { "titulo": "Tekkonkinkreet", "link": "https://www.youtube.com/watch?v=74FqJxPhGss" },
+      { "titulo": "Kubo and the Two Strings", "link": "https://www.youtube.com/watch?v=ykD2W8U6wH4" }
+    ],
+    "musica": [
+      { "titulo": "Ciudad de Brahman (1999) – Los Natas", "link": "https://www.youtube.com/watch?v=MwqvxSFaS20&list=RDMwqvxSFaS20&start_radio=1" },
+      { "titulo": "The Power to Believe (2003) – King Crimson", "link": "https://www.youtube.com/watch?v=sPqpvwlP3pU&list=PL3PhWT10BW3WbKLPr51fedCgvfqduPlrZ" },
+      { "titulo": "Entre dos aguas (1981) – Paco de Lucía", "link": "https://www.youtube.com/watch?v=oqMfv5IVeZc&list=RDoqMfv5IVeZc&start_radio=1" }
+    ]
+  },
+  {
+    "id": 2,
+    "rutaId": "martin",
+    "nombre": "Martin",
+    "ubicacion": "Ciudad de Buenos Aires",
+    "edad": 39,
+    "imagen": "/imgs/sm-martin.webp",
+        "initialCoins":11,
+    "habilidades": [
+      { "titulo": "HTML", "link": "https://lenguajehtml.com/" },
+      { "titulo": "Python", "link": "https://docs.python.org/es/3.14/" },
+      { "titulo": "Photoshop", "link": "https://photoshop.adobe.com/?promoid=DZTGZS8L&mv=other&mv2=unav&lang=es" },
+      { "titulo": "Trabajo en equipo", "link": "#" }
+    ],
+    "peliculas": [
+      { "titulo": "Matrix", "link": "https://www.youtube.com/watch?v=oNpP4ltklMg" },
+      { "titulo": "Volver al futuro", "link": "https://www.youtube.com/watch?v=WRrCVyT09ow" },
+      { "titulo": "Interestelar", "link": "https://www.youtube.com/watch?v=zSWdZVtXT7E" }
+    ],
+    "musica": [
+      { "titulo": "Attaque 77", "link": "http://www.youtube.com/@Attaque77oficial" },
+      { "titulo": "Ramones", "link": "http://www.youtube.com/@ramones" },
+      { "titulo": "Red Hot Chilli Peppers", "link": "http://www.youtube.com/@RedHotChiliPeppers" }
+    ]
+  }
+]

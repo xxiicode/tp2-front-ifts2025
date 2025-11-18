@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TechVerse 8‑Bit Logo</title>
+  <desc id="desc">Logotipo estilo 8‑bit inspirado en un bloque de pregunta de Mario con corchetes de código</desc>
+  <!-- Outer shadow -->
+  <rect x="10" y="18" width="236" height="228" rx="8" fill="#0B0E13"/>
+  <!-- Block base -->
+  <rect x="8" y="8" width="240" height="240" rx="8" fill="#F5C97A" stroke="#5C3C0D" stroke-width="12"/>
+  <!-- Inner bevel -->
+  <rect x="28" y="28" width="200" height="200" rx="4" fill="#F9E2B3" opacity="0.45"/>
+  <!-- Pixel screws -->
+  <circle cx="36" cy="36" r="6" fill="#5C3C0D"/>
+  <circle cx="220" cy="36" r="6" fill="#5C3C0D"/>
+  <circle cx="36" cy="220" r="6" fill="#5C3C0D"/>
+  <circle cx="220" cy="220" r="6" fill="#5C3C0D"/>
+
+  <!-- 8-bit code brackets -->
+  <g filter="url(#shadow)">
+    <path d="M96 76 H76 V92 H64 V108 H52 V124 H64 V140 H76 V156 H96 V140 H84 V124 H96 V108 H84 V92 H96 Z" fill="#FFFFFF"/>
+    <path d="M160 76 H180 V92 H192 V108 H204 V124 H192 V140 H180 V156 H160 V140 H172 V124 H160 V108 H172 V92 H160 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Tiny TV monogram at bottom -->
+  <g transform="translate(78,190)">
+    <rect x="0" y="0" width="100" height="22" rx="2" fill="#0B0E13" opacity="0.85"/>
+    <rect x="10" y="6" width="14" height="10" fill="#08B3DE"/>
+    <rect x="28" y="6" width="14" height="10" fill="#94DEE7"/>
+    <rect x="48" y="6" width="6" height="10" fill="#FD4D36"/>
+    <rect x="58" y="6" width="6" height="10" fill="#FFD166"/>
+    <rect x="68" y="6" width="22" height="10" fill="#00AE00"/>
+  </g>
+
+  <defs>
+    <filter id="shadow" x="0" y="0" width="256" height="256" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+</svg>

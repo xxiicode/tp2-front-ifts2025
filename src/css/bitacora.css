@@ -1,0 +1,167 @@
+/* Estilos generales del accordion */
+details {
+  background-color: var(--color-bg-box-light);
+  border: 3px solid var(--color-border);
+  box-shadow: 4px 4px 0 var(--color-shadow);
+  margin: 12px 0;
+
+  font-family: var(--font-2p), monospace;
+  color: #2d1a07;
+  cursor: pointer;
+}
+
+
+
+summary {
+  background-color: var(--color-bg-box);
+  font-weight: bold;
+  font-size: 14px;
+  list-style: none;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+  /* oculta el triangulito por defecto */
+}
+
+/* Contenido interno */
+details p {
+  padding-inline: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* Estilos del Timeline */
+
+/* -------------------------
+   Timeline de progreso
+-------------------------- */
+.timeline-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* 🌱 Línea central (sprite o degradado) */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  transform: translateX(-50%);
+  background: url('../assets/imgs/beanstalk.png') repeat-y center top;
+  /* sprite de planta */
+  background-size: contain;
+  /* se ajusta al ancho */
+}
+
+/* Cada ítem */
+.timeline-item {
+  position: relative;
+  margin: 2rem 0;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Burbujita con la fecha */
+.timeline-item::before {
+  content: attr(data-date);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../assets/imgs/cloud.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0;
+  font-weight: bold;
+  width: 120px;
+  height: 16px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+
+/* Caja de contenido */
+.timeline-content {
+  width: 45%;
+  background: var(--color-secundario);
+  border: 2px solid var(--color-borde);
+  padding: 1.2rem;
+  box-shadow: 3px 3px 0 var(--color-borde);
+  font-family: var(--font-2p), monospace;
+  /* fuente retro */
+  text-align: left;
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+/* Alterna izquierda/derecha */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: auto;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive: Bitácora / Timeline ===== */
+@media (max-width: 768px) {
+  .timeline-content {
+    width: 100%;
+    padding-inline: 5px;
+    color: black;
+  }
+
+  .timeline-item::before {
+    top: -10px;
+  }
+}
